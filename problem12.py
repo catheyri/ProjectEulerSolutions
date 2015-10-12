@@ -15,6 +15,21 @@ def triangle(nums, index):
                 sum += num
         return sum
 
-result = triangle(naturalNumbers, 3)
+result = triangle(naturalNumbers, 7)
 print "\n"
 print result
+
+def factor(number):
+        factors = []
+        for i in range(1,(number/2)+1):
+                if number%i == 0:
+                        factors.append(i)
+                        number = number/i
+                        print i
+        return factors
+
+primeFactors = factor(result)
+print primeFactors
+print len(primeFactors)
+        
+                        
