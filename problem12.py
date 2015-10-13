@@ -1,12 +1,7 @@
 #Problem 12
-#dummy comment for test2
 
-def triangle(end):
-        newNums = [x for x in range(1,end+1)]
-        sum = 0
-        for num in newNums:
-                sum += num
-        return sum
+import time
+startTime = time.time()
 
 def factor(number):
         factors = []
@@ -17,10 +12,11 @@ def factor(number):
 
 numFactors = 0
 i = 1
+triNum = 0
 max = 1
 
 while 1:
-        triNum = triangle(i)            #Calculate the next triangular number
+        triNum += i                     #Calculate the next triangular number
         factors = factor(triNum)        #Factor that number
         if len(factors) > max:
                 max = len(factors)
@@ -30,6 +26,8 @@ while 1:
         i += 1
 
 print triNum
-
+currentTime = time.time()
+runTime = currentTime - startTime
+print str(runTime) + " seconds" 
         
                         
